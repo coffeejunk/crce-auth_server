@@ -1,0 +1,5 @@
+{
+  "name": "auth_server",
+  "private": true,
+  "dependencies": {}
+}
