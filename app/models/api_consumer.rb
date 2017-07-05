@@ -1,0 +1,2 @@
+class ApiConsumer < ApplicationRecord
+end
