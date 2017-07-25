@@ -11,6 +11,13 @@ Things you may want to cover:
 
 * Configuration
 
+Create a `.env.local` file and fill it with
+
+```
+GOOGLE_CLIENT_ID='<YOUR GOOGLE CLIENT ID>'
+GOOGLE_CLIENT_SECRET='<YOUR GOOGLE CLIENT SECRET>'
+```
+
 * Database creation
 
 * Database initialization

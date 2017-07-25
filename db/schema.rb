@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170705102522) do
+ActiveRecord::Schema.define(version: 20170725143941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,13 +23,15 @@ ActiveRecord::Schema.define(version: 20170705102522) do
     t.index ["public_key"], name: "index_administrative_accounts_on_public_key", unique: true
   end
 
-  create_table "api_consumers", force: :cascade do |t|
+  create_table "api_consumers", id: :serial, force: :cascade do |t|
     t.string "name"
-    t.string "email"
-    t.string "provider"
-    t.string "uid"
+    t.string "email", null: false
+    t.string "provider", null: false
+    t.string "uid", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_api_consumers_on_email"
+    t.index ["uid"], name: "index_api_consumers_on_uid"
   end
 
   create_table "envelope_communities", id: :serial, force: :cascade do |t|
